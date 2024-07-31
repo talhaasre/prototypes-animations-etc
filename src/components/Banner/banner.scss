@@ -1,0 +1,52 @@
+@import "../../common.scss";
+
+.banner {
+  background-color: $color-F3F3F3;
+  padding-top: 10.688em;
+  .custom_breadcrumb {
+    @include textStyles(1em, normal, 0);
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+    color: $color-1e1e1e;
+    text-transform: capitalize;
+    .home_url {
+      color: $color-1e1e1e;
+    }
+  }
+  .banner_heading {
+    font-family: "Red Hat Display", sans-serif;
+    padding: 0.25em 0 0.75em;
+    text-align: center;
+    font-size: 3.75rem;
+    font-weight: 800;
+    .styled_text {
+      color: $color-EE4E56;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .banner {
+    padding-top: 4.8em;
+    .custom_breadcrumb {
+      @include textStyles(1.5em, normal, 0);
+      margin-top: 3em;
+    }
+    .banner_heading {
+      font-size: 4em;
+      padding: 20px 0 44px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .banner {
+    padding-top: 6em;
+    .custom_breadcrumb {
+      @include textStyles(1.2em, normal, 0);
+      margin-top: 2.5em;
+    }
+    .banner_heading {
+      font-size: 3em;
+    }
+  }
+}

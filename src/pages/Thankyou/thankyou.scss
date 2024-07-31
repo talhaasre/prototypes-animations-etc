@@ -1,0 +1,154 @@
+@import "../../common.scss";
+
+.thank_sec1.disabled {
+  display: none;
+}
+
+.thank_sec1 {
+  // background-color: $color-F3F3F3;
+  padding-top: 20em;
+  text-align: center;
+//   display: none;
+  .circle_icon {
+    width: 6.375em;
+    height: 6.375em;
+    margin-bottom: 3.138em;
+  }
+  .thank_text {
+    font-size: 2.5em;
+    font-weight: 900;
+    line-height: 1.8;
+    br {
+      display: block;
+    }
+    .mobile_text {
+      margin-bottom: 0;
+    }
+    .red {
+      color: $color-EE4E56;
+    }
+  }
+  .thank_btn {
+    .row {
+      display: flex;
+      justify-content: center;
+      .pay_now {
+        width: 100%;
+        max-width: 21em;
+        margin-left: 2em;
+        // margin: 2.5em 0 0 2.125em;
+
+        .pay_text {
+          text-align: left;
+          padding-left: 1.2em;
+          font-size: 1.25em;
+          height: 3.65em;
+          .arrow_icon_1 {
+            // right: 1.2em;
+            width: 100%;
+            max-width: 1.938em;
+            height: 0.688em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.thank_sec2.enable {
+  display: block;
+}
+.thank_sec2 {
+  padding-top: 20em;
+  text-align: center;
+  display: none;
+  .circle_icon {
+    width: 6.375em;
+    height: 6.375em;
+    margin-bottom: 3.138em;
+  }
+  .thank_text {
+    font-size: 2.5em;
+    font-weight: 900;
+    line-height: 1.8;
+    br {
+      display: block;
+    }
+    .red {
+      color: $color-EE4E56;
+    }
+    .mobile_text {
+        margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .thank_sec1 {
+    .thank_btn {
+      .row {
+        .pay_now {
+          max-width: 20em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .thank_sec1 {
+    padding-top: 22em;
+    .circle_icon {
+    }
+    .thank_text {
+      font-size: 2.1em;
+      font-weight: 900;
+      line-height: 1.5;
+    //   margin: 0 2.25em;
+      .red {
+        display: block;
+      }
+      .mobile_text {
+        margin-bottom: 1em;
+        display: inline-block;
+      }
+    }
+  }
+  .thank_sec1 {
+    .thank_btn {
+      .row {
+        flex-direction: column;
+        .pay_now {
+          max-width: 100%;
+          margin: 0;
+
+          .pay_text {
+            text-align: center;
+            height: 2.8em;
+            .arrow_icon_1 {
+              // right: 1.35em;
+            }
+          }
+        }
+      }
+    }
+  }
+  .thank_sec2 {
+    padding-top: 29em ;
+    .circle_icon {
+    }
+    .thank_text {
+      font-size: 2.1em;
+      font-weight: 900;
+      line-height: 1.5;
+    //   margin: 0 2.25em;
+      .red {
+        display: block;
+      }
+      .mobile_text {
+        // margin-bottom: 1em;
+        display: inline-block;
+      }
+    }
+  }
+}

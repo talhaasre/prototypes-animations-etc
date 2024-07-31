@@ -1,0 +1,69 @@
+@import "../../common.scss";
+
+.privacy_sec1 {
+  padding: 5em 0 10.25em;
+  .text_container2 {
+    margin-bottom: 3em;
+    .description {
+      @include textStyles(1.5em, normal, 0);
+      color: $color-333333;
+      font-family: "Poppins", sans-serif;
+      max-width: 78%;
+      text-align: center;
+      margin: 1em auto 0;
+    }
+  }
+  .text_container {
+    .heading {
+      @include textStyles(1.875em, normal, 0);
+      color: $color-333333;
+      font-weight: 800;
+      max-width: 100%;
+      text-align: left;
+    }
+    .description {
+      @include textStyles(1.5em, normal, 0);
+      color: $color-333333;
+      font-family: "Poppins", sans-serif;
+      max-width: 100%;
+      margin-top: 1em;
+      text-align: left;
+    }
+    ul {
+      li {
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: 1em;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0.75em;
+          left: 0.1em;
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 50%;
+          background-color: $color-EE4E56;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .privacy_sec1 {
+    padding: 5em 0;
+    .text_container2 {
+      .description {
+        font-size: 1.4em;
+      }
+    }
+    .text_container {
+      .heading {
+        font-size: 1.8em;
+      }
+      .description {
+        font-size: 1.4em;
+      }
+    }
+  }
+}

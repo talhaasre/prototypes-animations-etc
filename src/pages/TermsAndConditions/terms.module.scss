@@ -1,0 +1,101 @@
+@import "../../common.scss";
+
+.terms_sec1 {
+  padding: 5em 0 10.25em;
+  .text_container {
+    margin-bottom: 3em;
+    .description {
+      @include textStyles(1.5em, normal, 0);
+      color: $color-333333;
+      font-family: "Poppins", sans-serif;
+      max-width: 78%;
+      text-align: center;
+      margin: 1em auto 0;
+    }
+  }
+  .terms_tabs_wrapper {
+    display: none;
+    // display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
+    flex-wrap: wrap;
+    .terms_tab {
+      @include textStyles(1.875em, normal, 0);
+      color: $color-212529;
+      margin: 0 1.25em 1em 0;
+      font-weight: 400;
+      cursor: pointer;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.2em;
+        width: 0;
+        height: 3px;
+        background-color: $color-EE4E56;
+        transition: 0.3s width;
+      }
+    }
+    .terms_tab.active {
+      color: $color-EE4E56;
+      font-weight: bold;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .text_container2 {
+    .heading {
+      @include textStyles(1.875em, normal, 0);
+      color: $color-333333;
+      font-weight: 800;
+      max-width: 100%;
+      text-align: left;
+    }
+    .description {
+      @include textStyles(1.5em, normal, 0);
+      color: $color-333333;
+      font-family: "Poppins", sans-serif;
+      max-width: 100%;
+      margin-top: 1em;
+      text-align: left;
+    }
+    ul {
+      li {
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: 1em;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0.75em;
+          left: 0.1em;
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 50%;
+          background-color: $color-EE4E56;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .terms_sec1 {
+    padding: 5em 0;
+    .text_container {
+      .description {
+        font-size: 1.4em;
+      }
+    }
+    .text_container2 {
+      .heading {
+        font-size: 1.8em;
+      }
+      .description {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
