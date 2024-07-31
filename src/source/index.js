@@ -36,5 +36,6 @@ export { default as footercall } from "./images/general/footer-phone-call-icon.s
 export { default as activearrow } from "./images/general/hamburger-arrow.svg";
 export { default as downarrowred } from "./images/general/down-arrow2.svg";
 export { default as coloredlist } from "./images/general/colored-list.svg";
+export { default as lighteffectformat1 } from "./images/animations/light-effect-format-1.svg";
 
 export let images = {};

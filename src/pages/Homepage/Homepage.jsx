@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import Banner from "../../components/Banner/Banner";
+import RotatingAnimation from "../../components/RotatingAnimation/RotatingAnimation";
+import UnfoldCards from "../../components/UnfoldCards/UnfoldCards";
+import CircularProducts from "../../components/CircularProducts/CircularProducts";
 
 const Homepage = () => {
   useEffect(() => {
@@ -7,32 +9,15 @@ const Homepage = () => {
   }, []);
   return (
     <>
-      <Banner firstText="Hello" secondText="World!" />
-
       <section className="home_sec1">
-        <div className="my_container">
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
-          <h1 className="heading">Hello World!</h1>
+        <div className="my_container mw-100">
+          <RotatingAnimation />
+        </div>
+        <div className="my_container mw-100">
+          <UnfoldCards />
+        </div>
+        <div className="my_container mw-100">
+          <CircularProducts />
         </div>
       </section>
     </>

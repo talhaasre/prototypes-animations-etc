@@ -1,0 +1,253 @@
+.triangle {
+    position: absolute;
+
+    &-row--reverse,
+    &-row {
+        position: relative;
+        height: 240px;
+        width: 840px;
+        margin: 30px auto;
+        z-index: 1;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 120px;
+            width: 100%;
+            background: #fff;
+            content: "";
+            z-index: -1;
+        }
+    }
+
+    &-row--reverse {
+        .triangle {
+            animation: unfold--reverse 2s ease-in-out forwards;
+            transform: rotate3d(1, 1, 0, 90deg);
+
+            &:nth-child(1) {
+                right: 0;
+                animation-delay: 0s;
+                transform-origin: 100% 100%;
+            }
+
+            &:nth-child(2) {
+                right: 0;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(3) {
+                right: 120px;
+                animation-delay: 2s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 100% 0;
+            }
+
+            &:nth-child(4) {
+                right: 120px;
+                animation-delay: 4s;
+            }
+
+            &:nth-child(5) {
+                right: 240px;
+                transform: rotate3d(-1, -1, 0, 90deg);
+                animation-delay: 6s;
+                transform-origin: 100% 100%;
+            }
+
+            &:nth-child(6) {
+                right: 240px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(7) {
+                right: 360px;
+                animation-delay: 8s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 100% 0;
+            }
+
+            &:nth-child(8) {
+                right: 360px;
+                animation-delay: 10s;
+            }
+
+            &:nth-child(9) {
+                right: 480px;
+                transform: rotate3d(-1, -1, 0, 90deg);
+                animation-delay: 12s;
+                transform-origin: 100% 100%;
+            }
+
+            &:nth-child(10) {
+                right: 480px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(11) {
+                right: 600px;
+                animation-delay: 14s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 100% 0;
+            }
+
+            &:nth-child(12) {
+                right: 600px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(even) {
+                top: 0;
+                transform: rotate3d(1, 0, 0, 90deg);
+                transform-origin: 0 100%;
+            }
+
+            &:nth-child(odd) {
+                bottom: 0;
+            }
+        }
+    }
+
+    &-row {
+        .triangle {
+            transform: rotate3d(1, 1, 0, 90deg);
+            animation: unfold .4s ease-in-out forwards;
+
+            &:nth-child(1) {
+                left: 0;
+                animation-delay: .2s;
+                transform-origin: 0 0;
+            }
+
+            &:nth-child(2) {
+                left: 0;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(3) {
+                left: 120px;
+                animation-delay: .6s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-child(4) {
+                left: 120px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(5) {
+                left: 240px;
+                animation-delay: 1s;
+                transform-origin: 0 0;
+            }
+
+            &:nth-child(6) {
+                left: 240px;
+                animation-delay: 1.4s;
+            }
+
+            &:nth-child(7) {
+                left: 360px;
+                animation-delay: 1.8s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-child(8) {
+                left: 360px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(9) {
+                left: 480px;
+                animation-delay: 2.2s;
+                transform-origin: 0 0;
+            }
+
+            &:nth-child(10) {
+                left: 480px;
+                animation-delay: 2.6s;
+            }
+
+            &:nth-child(11) {
+                left: 600px;
+                animation-delay: 3s;
+                transform: rotate3d(-1, 1, 0, 90deg);
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-child(12) {
+                left: 600px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(even) {
+                top: 0;
+                transform: rotate3d(1, 0, 0, 90deg);
+                transform-origin: 0 100%;
+            }
+
+            &:nth-child(odd) {
+                bottom: 0;
+            }
+        }
+    }
+
+    &.up {
+        width: 0;
+        height: 0;
+        border-left: 120px solid transparent !important;
+        border-right: 120px solid transparent !important;
+
+        border-bottom: 120px solid;
+    }
+
+    &.down {
+        width: 0;
+        height: 0;
+        border-left: 120px solid transparent !important;
+        border-right: 120px solid transparent !important;
+
+        border-top: 120px solid;
+    }
+
+    &.transparent {
+        border-color: transparent;
+    }
+
+    &.grey {
+        border-color: #6d6d6d;
+    }
+
+    &.black {
+        border-color: #1c1c1c;
+    }
+
+    &.white {
+        border-color: #ffffff;
+    }
+
+    &.red {
+        border-color: #c52027;
+    }
+
+    &.delay-0 {
+        animation-delay: 0s;
+    }
+}
+
+@keyframes unfold {
+    to {
+        opacity: 1;
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
+}
+
+@keyframes unfold--reverse {
+    to {
+        opacity: 1;
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
+}
