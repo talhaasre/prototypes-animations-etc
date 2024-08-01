@@ -1,0 +1,219 @@
+
+.radial_boxes {
+    display: flex;
+    justify-content: center;
+}
+
+// -- vars
+$bg-color: #34495e;
+$default-size: 1em;
+$label-font-size: $default-size / 4;
+$label-font-size-redo: $default-size * 4;
+
+// -- mixins
+@mixin size($width, $height) {
+    height: $height;
+    width: $width;
+}
+
+@mixin draw-progress($progress, $color) {
+    .pie {
+        .half-circle {
+            border-color: $color;
+            transition: all 1s;
+        }
+
+        .left-side {
+            transform: rotate($progress * 3.6deg);
+            transition: all 1s;
+        }
+
+        @if $progress <=50 {
+            .right-side {
+                display: none;
+            }
+        }
+
+        @else {
+            clip: rect(auto, auto, auto, auto);
+
+            .right-side {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.set-size {
+    font-size: 10em;
+}
+
+.charts-container {
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+.pie-wrapper {
+    @include size($default-size, $default-size);
+    float: left;
+    margin: 15px;
+    position: relative;
+
+    .pie {
+        @include size(100%, 100%);
+        clip: rect(0, $default-size, $default-size, $default-size / 2);
+        left: 0;
+        position: absolute;
+        top: 0;
+
+        .half-circle {
+            @include size(100%, 100%);
+            border: ($default-size / 10) solid #3498db;
+            border-radius: 50%;
+            clip: rect(0, $default-size / 2, $default-size, 0);
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .label {
+        background: $bg-color;
+        border-radius: 50%;
+        bottom: $label-font-size-redo / 10;
+        color: #ecf0f1;
+        cursor: default;
+        display: block;
+        font-size: $label-font-size;
+        left: $label-font-size-redo / 10;
+        line-height: $label-font-size-redo * .70;
+        position: absolute;
+        right: $label-font-size-redo / 10;
+        text-align: center;
+        top: $label-font-size-redo / 10;
+
+        .smaller {
+            color: #bdc3c7;
+            font-size: .45em;
+            padding-bottom: 20px;
+            vertical-align: super;
+        }
+    }
+
+    .shadow {
+        @include size(100%, 100%);
+        border: $default-size / 10 solid #bdc3c7;
+        border-radius: 50%;
+    }
+
+
+    &.progress-30 {
+        @include draw-progress(0, #3498db);
+
+        &.active {
+            @include draw-progress(100, #3498db);
+        }
+    }
+}
+
+
+svg {
+    transition: all 1s;
+}
+
+.circle-background,
+.circle-progress {
+    transition: all 1s ease;
+    fill: none;
+}
+
+.circle-background {
+    stroke: #ddd;
+    transition: all 1s ease;
+}
+
+.circle-progress {
+    stroke: red;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 1s ease;
+}
+
+.circle-text {
+    font-size: 3em;
+    font-weight: bold;
+    fill: red;
+    transition: all 1s ease;
+}
+
+.wid-container {
+
+    /* Apply css properties to h1 element */
+    h1 {
+        text-align: center;
+    }
+
+    /* Create a container using CSS properties */
+    .container {
+        top: 30%;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Apply CSS properties to ui-widgets class */
+    .ui-widgets {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 9rem;
+        margin: 1.5rem;
+        border: 1.2rem solid palegreen;
+        box-shadow: inset 0 0 7px grey;
+        border-left-color: palegreen;
+        border-top-color: chartreuse;
+        border-right-color: darkgreen;
+        border-bottom-color: white;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /*  Apply css properties to the second 
+        child of ui-widgets class */
+    .ui-widgets:nth-child(2) {
+        border-top-color: chartreuse;
+        border-right-color: white;
+        border-left-color: palegreen;
+        border-bottom-color: white;
+    }
+
+    /*  Apply css properties to ui-widgets class 
+        and ui-values class*/
+    .ui-widgets .ui-values {
+        top: 40px;
+        position: absolute;
+        left: 10px;
+        right: 0;
+        font-weight: 700;
+        font-size: 2.0rem;
+
+    }
+
+    /*  Apply css properties to ui-widgets 
+        class and ui-labels class*/
+    .ui-widgets .ui-labels {
+
+        left: 0;
+        bottom: -16px;
+        text-shadow: 0 0 4px grey;
+        color: black;
+        position: absolute;
+        width: 100%;
+        font-size: 16px;
+    }
+}
