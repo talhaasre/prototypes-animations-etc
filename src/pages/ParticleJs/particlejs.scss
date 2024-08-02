@@ -1,21 +1,33 @@
-section {
-    font-size: 3rem;
+.particle-sec {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 
-    h1 {
+    .content_wrapper {
         position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .content-box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .particle-heading {
+            font-size: 5em;
+        }
     }
 }
 
 
 
 
-section:nth-child(odd) {
-    // background-color: grey;
+.particle-sec:nth-child(even) {
     color: white;
     background-color: #b61924;
 

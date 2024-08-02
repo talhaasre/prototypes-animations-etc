@@ -3,6 +3,7 @@ import RotatingAnimation from "../../components/RotatingAnimation/RotatingAnimat
 import UnfoldCards from "../../components/UnfoldCards/UnfoldCards";
 import CircularProducts from "../../components/CircularProducts/CircularProducts";
 import RadialProgressBar from "../../components/RadialProgressBar/RadialProgressBar";
+import GlowingBox from "../../components/GlowingBox/GlowingBox";
 
 const Homepage = () => {
   useEffect(() => {
@@ -22,6 +23,9 @@ const Homepage = () => {
         </div>
         <div className="my_container mw-100">
           <RotatingAnimation />
+        </div>
+        <div className="my_container mw-100" style={{background: "transparent", padding: "5em"}}>
+          <GlowingBox />
         </div>
       </section>
     </>
